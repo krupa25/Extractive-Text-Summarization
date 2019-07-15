@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+    <head>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+        
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+            <nav class="navbar navbar-inverse">
+                    <div class="container-fluid">
+                      <div class="navbar-header">
+                        <a class="navbar-brand" href="#">VolvMedia</a>
+                      </div>
+                      <ul class="nav navbar-nav">
+                        <li class="active"><a href="#">Home</a></li>
+                      </ul>
+                    </div>
+                  </nav>
+
+        <div class="container">
+            <div class="row">
+                <h1>Text Summarization</h1>
+                <form action="/article_submit" method="POST">
+                    {% csrf_token %}
+                    <div class="col-sm-6">
+                        <label>Text to be Summarized:</label>
+                        <textarea class="form-control" placeholder="Enter your Text" rows=15 name="article"></textarea>
+                        <center><button class="btn btn-success" style="margin-top: 15px;">Summarize</button></center>
+                    </div>
+
+                </form>
+                <div class="col-sm-6">
+                        <label>Summarized Text:</label>
+                        <textarea class="form-control" placeholder="Summary of text" rows=15 name="summary">{% summary %}</textarea>  
+                </div>
+            </div>
+    
+        </div>
+    
+    </body>
+</html>
